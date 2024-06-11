@@ -13,14 +13,14 @@ int main(void)
 	DDRA = 0xFF;
 	DDRB = 0x0F;
 	unsigned char FND[10] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F};
-	while (1)
+	while (1) // 무한반복
 	{
 		PORTB=0xFF;
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 10; i++) //10번 반복
 		{
 			PORTB=0xFF;
-			if((PINB & 0x10)!=0){  #DIP 스위치 1번의 값이 0이 아니면
-				PORTB=0xFE;
+			if((PINB & 0x10)!=0){  //DIP스위치 1번의값이 0이 아니면
+				PORTB=0xFE; //FND 표시자리 수정
 			}
 					
 			else if((PINB & 0x20)!=0){
@@ -35,8 +35,8 @@ int main(void)
 				PORTB=0xF7;
 			}
 			
-			PORTA = FND[i];
-			_delay_ms(1000);
+			PORTA = FND[i]; //1씩 올라가는 FND 구성
+			_delay_ms(1000); //1초 딜레이
 		}
 	}
 }
