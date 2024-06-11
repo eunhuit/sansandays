@@ -17,7 +17,7 @@ int main(void)
 	while (1) // 무한반복
 	{
 		PORTB=0xFF;
-		if((PINC & 0x10)!=0) //DIP스위치 1번의값이 0이 아니면
+		if((PINC & 0x10)!=0) //DIP스위치 1번의값이 0이 아니면 즉 DIP1이 켜지면
 		{  
 			for (int i = 0; i < 10; i++) //10번 반복
 				{
@@ -25,7 +25,7 @@ int main(void)
 				_delay_ms(500); //0.5초 딜레이
 				}
 		}
-		if((PINC & 0x20)!=0) //DIP스위치 2번의값이 0이 아니면
+		if((PINC & 0x20)!=0) //DIP스위치 2번의값이 0이 아니면 즉 DIP2가 켜지면
 		{
 			for (int i = 10; i >= 0; i--) //반대로 10번 반복
 				{
