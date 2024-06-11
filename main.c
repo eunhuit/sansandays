@@ -16,7 +16,7 @@ int main(void)
 	unsigned char FND[10] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F};
 	while (1) // 무한반복
 	{
-		PORTB=0xFF;
+		PORTB=0xF7;
 		if((PINC & 0x10)!=0) //DIP스위치 1번의값이 0이 아니면 즉 DIP1이 켜지면
 		{  
 			for (int i = 0; i < 10; i++) //10번 반복
