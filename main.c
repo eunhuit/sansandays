@@ -19,7 +19,7 @@ int main(void)
 		for (int i = 0; i < 10; i++)
 		{
 			PORTB=0xFF;
-			if((PINB & 0x10)!=0){
+			if((PINB & 0x10)!=0){  #DIP 스위치 1번의 값이 0이 아니면
 				PORTB=0xFE;
 			}
 					
